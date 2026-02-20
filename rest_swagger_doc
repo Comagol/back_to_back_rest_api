@@ -1,0 +1,254 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ORDS generated API for poc_v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://g72e895f580b78d-du9gypcf1cci20nt.adb.sa-saopaulo-1.oraclecloudapps.com/ords/comagol/poc/v1"
+    }
+  ],
+  "paths": {
+    "/sync/users": {
+      "post": {
+        "description": "Create a new record on poc_v1",
+        "responses": {
+          "201": {
+            "description": "The successfully created record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/poc_v1_ITEM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "description": "Retrieve a record from poc_v1",
+        "responses": {
+          "200": {
+            "description": "The queried record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "edit_action": {
+                      "$ref": "#/components/schemas/CHAR"
+                    },
+                    "email": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "id": {
+                      "$ref": "#/components/schemas/NUMBER"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "username": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "createdat": {
+                      "$ref": "#/components/schemas/TIMESTAMP"
+                    },
+                    "firstname": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "lastname": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "updatedat": {
+                      "$ref": "#/components/schemas/TIMESTAMP"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
+      },
+      "post": {
+        "description": "Create a new record on poc_v1",
+        "responses": {
+          "201": {
+            "description": "The successfully created record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/poc_v1_ITEM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "put": {
+        "description": "Create or update a record on poc_v1",
+        "responses": {
+          "201": {
+            "description": "The successfully created record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+
+                  }
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The successfully updated record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[^/]+$"
+            },
+            "description": "implicit"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/poc_v1_ITEM"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "Retrieve a record from poc_v1",
+        "responses": {
+          "200": {
+            "description": "The queried record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "id": {
+                      "$ref": "#/components/schemas/NUMBER"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "username": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "createdat": {
+                      "$ref": "#/components/schemas/TIMESTAMP"
+                    },
+                    "firstname": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "lastname": {
+                      "$ref": "#/components/schemas/VARCHAR2"
+                    },
+                    "updatedat": {
+                      "$ref": "#/components/schemas/TIMESTAMP"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[^/]+$"
+            },
+            "description": "implicit"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CHAR": {
+        "type": "string"
+      },
+      "NUMBER": {
+        "type": "number"
+      },
+      "STRING": {
+        "type": "string"
+      },
+      "TIMESTAMP": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^\\d{4}-[01]\\d-[0123]\\dT[012]\\d:[0-5]\\d:[0-5]\\d(.\\d+)?(Z|([-+][012]\\d:[0-5]\\d))$"
+      },
+      "VARCHAR2": {
+        "type": "string"
+      },
+      "poc_v1_ITEM": {
+        "properties": {
+          "body_text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
